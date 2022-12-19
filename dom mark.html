@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM Four assending order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+	<body>
+
+		<input type="number" id="ta" value="" placeholder="Tamil"><br>
+		<input type="number" id="en" value=""  placeholder="English"><br>
+		<input type="number" id="ma" value=""  placeholder="Maths"><br>
+		<input type="number" id="s" value=""  placeholder="Science"><br>
+		<input type="number" id="sos" value=""  placeholder="Social science"><br>
+		
+		<input type="text" id="total" value="" placeholder="Total mark">
+		<input type="text" id="precntage" value="" placeholder="precntage">
+		<input type="text" id="grade" value="" placeholder="Grade">
+		
+		<button   value="" onclick="myFunction()">click</button>
+		
+			<script>
+
+				function myFunction(){
+					let tamil=document.getElementById("ta").value;
+					let english=document.getElementById("en").value;
+					let maths=document.getElementById("ma").value;
+					let science=document.getElementById("s").value;
+					let socialScience=document.getElementById("sos").value;
+					
+					let total=parseInt(tamil)+parseInt(english)+parseInt(maths)+parseInt(science)+parseInt(socialScience);
+					let e=document.getElementById("total")
+						e.value=total;
+						
+					let per=(total/500)*100;
+					let perc=document.getElementById("precntage")
+						perc.value=per;
+					
+					
+					if (per <= 100 && per >= 90) {
+						
+						document.getElementById("grade").value="Your Grade is A verygood";
+					
+					} 
+						else if (per <= 89 && per >= 70) {
+							
+							document.getElementById("grade").value="Your Grade is B good";
+						
+						}
+					else if (per <= 69 && per >= 50) {
+						
+						document.getElementById("grade").value="Your Grade is C improve";
+					
+					}
+					else if(per <= 49 && per >= 35){
+						
+						document.getElementById("grade").value="Your Grade is D improve the knowledge";
+					
+					}
+					else{
+						
+						document.getElementById("grade").value="FAIL";
+					
+					}
+				}	
+				
+		</script>
+	</body>
+</html>
